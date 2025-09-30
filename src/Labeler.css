@@ -1,0 +1,53 @@
+/* 선택된 좌석 스타일 */
+.seat-circle.selected {
+    fill: rgba(255, 165, 0, 0.8); /* 주황색으로 강조 */
+    stroke: #ff4500;
+    stroke-width: 2px;
+  }
+  
+  /* 좌석 라벨 텍스트 스타일 */
+  .seat-label {
+    font-size: 8px;
+    font-weight: bold;
+    fill: white;
+    pointer-events: none; /* 텍스트가 클릭 이벤트를 방해하지 않도록 함 */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* 라벨링 모드일 때의 드래그 영역 */
+  .drag-rectangle.mode-label {
+    fill: rgba(0, 115, 255, 0.2);
+    stroke: rgba(0, 115, 255, 0.7);
+    stroke-dasharray: 4, 2;
+  }
+  
+  /* 라벨링 툴바 스타일 */
+  .labeling-toolbar {
+    background-color: #eef7ff;
+    border-color: #b3d7ff;
+  }
+  
+  .labeling-toolbar input[type="text"],
+  .labeling-toolbar select {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+  
+  .labeling-toolbar .confirm-button {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+  }
+  
+  .labeling-toolbar .cancel-button {
+    background-color: #dc3545;
+    color: white;
+    border-color: #dc3545;
+  }
+
+.edit-instruction { margin-top: 0; color: #555; font-size: 14px; }
