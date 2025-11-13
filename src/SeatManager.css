@@ -1,0 +1,133 @@
+.seat-manager-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.controls, .edit-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+}
+
+.file-upload-label {
+    padding: 8px 16px; font-size: 14px; color: #495057;
+    background-color: #fff; border: 1px solid #ced4da;
+    border-radius: 5px; cursor: pointer; transition: background-color 0.2s;
+}
+.file-upload-label:hover { background-color: #f1f3f5; }
+.file-upload-label input[type="file"] { display: none; }
+
+.download-button, .save-button, .row-delete-button, .edit-controls button {
+  padding: 8px 16px; font-size: 14px; color: white;
+  border: none; border-radius: 5px; cursor: pointer;
+  transition: background-color 0.2s;
+}
+.download-button { background-color: #007bff; }
+.download-button:hover { background-color: #0056b3; }
+.download-button:disabled { background-color: #adb5bd; cursor: not-allowed; }
+
+.save-button { background-color: #17a2b8; }
+.save-button:hover { background-color: #138496; }
+
+.row-delete-button { background-color: #dc3545; }
+.row-delete-button:hover { background-color: #c82333; }
+
+.edit-controls button {
+  background-color: #6c757d;
+}
+.edit-controls button.active {
+  background-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.file-info { color: #6c757d; font-size: 14px; margin-bottom: 20px; }
+
+.seat-layout-grid-wrapper {
+    width: 100%;
+    overflow: auto; /* 좌석이 많아지면 스크롤 생성 */
+    padding-bottom: 10px;
+    position: relative; /* 무대 위치의 기준점 */
+}
+
+.seat-layout-grid {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  user-select: none; /* 드래그 시 텍스트 선택 방지 */
+  position: relative; /* 무대 위치의 기준점 */
+}
+
+.seat-row {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+.seat-cell, .empty-space {
+  width: 60px;
+  height: 35px;
+}
+
+.empty-space {
+  background-color: transparent;
+  border: 1px dashed #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.empty-space:hover {
+  background-color: #e9ecef;
+}
+
+.seat-button {
+  width: 100%; height: 100%;
+  border: 1px solid #ccc; border-radius: 6px; font-size: 12px;
+  font-weight: bold; cursor: pointer; transition: all 0.2s ease;
+  color: white; display: flex; align-items: center; justify-content: center;
+  box-sizing: border-box;
+}
+
+.seat-button:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.seat-button.selected {
+    border: 2px solid #ff0000;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.7);
+}
+
+.seat-button.available { background-color: #28a745; }
+.seat-button.reserved { background-color: #ffc107; }
+.seat-button.taken { background-color: #dc3545; }
+
+/* ✨ 무대 스타일 추가 */
+.stage-area {
+    position: absolute;
+    background-color: rgba(108, 117, 125, 0.7); /* 반투명 회색 */
+    border: 2px solid #343a40;
+    border-radius: 5px;
+    pointer-events: none; /* 무대 아래 좌석 클릭 가능하도록 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stage-text {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
+}
